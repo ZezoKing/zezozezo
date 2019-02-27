@@ -63,15 +63,6 @@ client.on('message', message => {
                         }
                     }); 
 
-if (message.content === 'help') {
-         let embed = new Discord.RichEmbed()
-.setThumbnail(message.author.avatarURL)    
-      .addField("** مبرمج البوت :wrench: **","**  , @!  , Zezo#7765   **")
-.setColor('RANDOM')
-  message.author.sendEmbed(embed);
-    }
-});
-
 
 client.on('message', message => {
             if (message.content.startsWith(prefix + "bot")) {
