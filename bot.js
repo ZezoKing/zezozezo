@@ -7,7 +7,7 @@ const moment = require('moment');
 var prefix = "+";
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(` اكتب اي شي هنا  `,"http://twitch.tv/S-F")
+client.user.setGame(` BC Bot  `,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
