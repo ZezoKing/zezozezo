@@ -15,7 +15,7 @@ client.on('ready', () => {
     client.user.setStatus("idle")
 });
 
-const prefix = "$"
+const prefix = "Z"
 client.on('message', async msg => {
 	if (msg.author.bot) return undefined;
 	
