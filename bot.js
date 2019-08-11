@@ -1,9 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-client.on('ready', () => {
 client.on("message", message => {
     var prefix = "=";
- 
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith(prefix + "clear")) {
    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | **ليس لديك صلاحيات**');
@@ -19,9 +17,7 @@ client.on("message", message => {
           text: "Desert Bot"
         }
       }}).then(msg => {msg.delete(3000)});
-                          }
-
-     
+         }                 
 });
 
 
