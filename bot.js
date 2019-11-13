@@ -30,11 +30,38 @@ client.user.setGame(` تكوتا  `,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
 });
-setInterval(() => {
-    let textchannel = client.channels.find(channel => channel.id === '644073141240594442'); // ايدي الروم الي تبي يرسل فيه 
+var Client = new (require ('discord.js')).Client (),
+    Prefix = '-',
+    ID = '644078333239492628',
+    String = 'تكوتا';
+Client.login (Token).then (async (Token) => {
+  var Channel = Client.channels.get (ID);
+  if (Channel) {
+    setInterval (() => {
+      Channel.send (String);
+    }, 4 * 60 * 1000);
+  }
+}).catch (async (Error) => {
+  return console.error (Error);
+});
 
-    textchannel.send("تكوتا كريدت تكوتا") // الرسالة
-}, 240000); // 240000 = 4 دقايق
+client.on('message', message => {
+                                if(!message.channel.guild) return;
+                        if (message.content.startsWith('ping')) {
+                            if(!message.channel.guild) return;
+                            var msg = `${Date.now() - message.createdTimestamp}`
+                            var api = `${Math.round(client.ping)}`
+                            if (message.author.bot) return;
+                        let embed = new Discord.RichEmbed()
+                        .setAuthor(message.author.username,message.author.avatarURL)
+                        .setColor('RANDOM')
+                        .addField('**Time Taken:**',msg + " ms 📶 ")
+                        .addField('**WebSocket:**',api + " ms 📶 ")
+         message.channel.send({embed:embed});
+                        }
+                    }); 
+
+
 
 client.login(process.env.BOT_TOKEN);
 
