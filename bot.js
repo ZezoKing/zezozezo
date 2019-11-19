@@ -4,7 +4,7 @@ client.on('ready', async() => {
 var server = "642711609768280075"; 
 var channel = "644073599262654464";
     setInterval(()=>{
-    client.guilds.get(server).channels.get(channel).send('** سلوى اكس برو   **')
+    client.guilds.get(server).channels.get(channel).send('بس ذا يشتغل ؟')
     },305);
 }) 
 
