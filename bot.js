@@ -1,15 +1,13 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-client.on("message", message => {
-let args = message.content.split(" ").slice(1).join(" ");
-if(message.author.bot || message.channel.type == "DM") return;
-if(message.author.id !== "608511451736571914") return;
-if(message.content.startsWith("#say")) {
-message.channel.send(`${args}`)
-}
-})
+client.on('ready', async() => {
+var server = "619139460092788746"; 
+var channel = "646390015563137025";
+    setInterval(()=>{
+    client.guilds.get(server).channels.get(channel).send('** سلوى اكس برو   **')
+    },305);
+}) 
+
 
 client.login(process.env.BOT_TOKEN);
-
-
 
