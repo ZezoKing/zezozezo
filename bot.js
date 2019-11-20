@@ -1,10 +1,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 client.on('ready', async() => {
-var server = "642711609768280075"; 
-var channel = "644073599262654464";
+var server = "646630213937266688"; 
+var channel = "646630398574723073";
     setInterval(()=>{
-    client.guilds.get(server).channels.get(channel).send('بس ذا يشتغل ؟')
+    client.guilds.get(server).channels.get(channel).send('كريدت يا ويل امها')
     },305);
 }) 
 
