@@ -5,21 +5,16 @@ const { Client, RichEmbed } = require('discord.js');
 client.on("ready", () => {
   console.log(`I AM Ready!`);
  console.log(`Logged in as ${client.user.tag}!`); 
+  client.user.setStatus('online');
 })
-var prefix = '€'
-client.on("message", message => {
-
-            if (message.content.startsWith(prefix + "bc")) {
-                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
-  let args = message.content.split(" ").slice(1);
-  var argresult = args.join(' '); 
-  message.guild.members.forEach(m => {
- m.send(`${argresult}\n ${m}`);
+client.on("message",message =>{
+if (!message.guild) return;
+  if(message.content.startsWith("!ping")){
+let ping =  new Discord.RichEmbed()
+.setTitle(`> Ping: ${Date.now() - message.createdTimestamp}`)
+message.channel.send(ping)
+  }
 })
- message.channel.send(`\`${message.guild.members.size}\` : عدد الاعضاء المستلمين`); 
- message.delete(); 
-};     
-});
 
 client.login(process.env.BOT_TOKEN);
 
